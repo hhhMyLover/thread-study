@@ -11,6 +11,13 @@ import java.util.concurrent.FutureTask;
 
 @RestController
 @RequestMapping("/thread")
+/**
+ * 线程创建方式
+ * Thread有默认的名字，不用手动设置
+ * 默认的名字为 Thread-0 genThreadName() 方法生成 默认是从零开始
+ *
+ * 给线程设置名字可以使用构造方法，也可以使用setName()方法
+ */
 public class ThreadController {
 
     /**
@@ -19,10 +26,8 @@ public class ThreadController {
      */
     @GetMapping("/baseThread")
     public String baseThread() {
-        MyThread t1 = new MyThread();
-        MyThread t2 = new MyThread();
-        t1.setName("t1");
-        t2.setName("t2");
+        MyThread t1 = new MyThread("t1");
+        MyThread t2 = new MyThread("t2");
         t1.start();
         t2.start();
         return "success";
