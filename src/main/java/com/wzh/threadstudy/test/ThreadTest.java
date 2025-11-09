@@ -1,4 +1,4 @@
-package com.wzh.threadstudy.thread;
+package com.wzh.threadstudy.test;
 
 public class ThreadTest {
 
